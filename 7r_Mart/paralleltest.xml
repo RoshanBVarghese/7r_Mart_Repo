@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="paralleltest" parallel="tests" thread-count="5"> <!-- thread counts
+	mean how many test cases can be executed-->
+	<listeners>
+		<listener class-name="generate_report.Listeneres"></listener>
+	</listeners>
+	<parameter name="browser" value="chrome"></parameter>
+	<test name="Test1">
+		<classes>
+
+			<class name="test_scripts.Login_Test">
+				<methods>
+					<include name="verifyTheUserIsabletoLoginusingvalidcredentials"> </include>
+				</methods>
+			</class>
+		</classes>
+
+	</test>
+	<test name="Test2">
+		<classes>
+			<class name="test_scripts.Contact_Test">
+				<methods>
+					<include name="verifyTheUserIsabletoUpdatetheCurrentDetails"></include>
+				</methods>
+			</class>
+		</classes>
+	</test>
+	<!--
+	Test -->
+</suite> <!--
+Suite -->
