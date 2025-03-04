@@ -17,7 +17,7 @@ public class Contact_Test extends Base{
 //		String phn = "956755522" ;
 //		String time = "7pm";
 		String phn = Excel_Utility.getIntegerData(1, 0, "Manage_Contact");
-		String time =Excel_Utility.getIntegerData(1, 1, "Manage_Contatc");
+		String time =Excel_Utility.getIntegerData(1, 1, "Manage_Contact");
 		String username_value = Excel_Utility.getStringData(1, 0, "Login_Page");
 		String password_value = Excel_Utility.getStringData(1, 1, "Login_Page");
 
