@@ -14,16 +14,16 @@ public class Product_Page {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-product' and @class='small-box-footer']")
-	private WebElement moreinfo;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-product' and @class='small-box-footer']")
+//	private WebElement productmoreinfo;
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-danger btncss']")
 	private WebElement delete;
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-	public void clickMoreinfo() {
-		moreinfo.click();
-	}
+//	public void clickMoreinfoProductPage() {
+//		productmoreinfo.click();
+//	}
 
 	public void clickDeletebutton() {
 		delete.click();

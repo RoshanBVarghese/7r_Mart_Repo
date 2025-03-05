@@ -6,10 +6,14 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import pages.Contact_Page;
+import pages.LogOut_Page;
 import pages.Login_Page;
 import utilities.Excel_Utility;
 
 public class Contact_Test extends Base{
+	LogOut_Page logoutpage;
+	Contact_Page contact;
+	
 	@Test(description = "verify that User is Able to Change the Phone number  and Delivery Time")
 	public void verifyTheUserIsabletoUpdatetheCurrentDetails() throws IOException {
 		//String username_value = "admin";
@@ -22,16 +26,17 @@ public class Contact_Test extends Base{
 		String password_value = Excel_Utility.getStringData(1, 1, "Login_Page");
 
 		Login_Page loginpage = new Login_Page(driver);
-		loginpage.enterUsername(username_value);
-		loginpage.enterPassword(password_value);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsername(username_value).enterPassword(password_value);
+		//loginpage.enterPassword(password_value);
+		logoutpage = loginpage.clickonSigninButton();
 		
-		Contact_Page contact = new Contact_Page(driver);
-		contact.ClickontheManageContact();
-		contact.ClickonEditButton();
-		contact.Enterthevalues(phn);
-		contact.Enterthedeliverytime(time);
-		contact.Clicktheupdatebutton();
+//		Contact_Page contact = new Contact_Page(driver);
+//		contact.ClickontheManageContactMoreInfo();
+		contact = logoutpage.ClickontheManageContactMoreInfo();
+		contact.ClickonEditButton().Enterthevalues(phn).Enterthedeliverytime(time).Clicktheupdatebutton();
+//		contact.Enterthevalues(phn);
+//		contact.Enterthedeliverytime(time);
+//		contact.Clicktheupdatebutton();
 		boolean isAlertBoxDisplayed =contact.isAlertBoxDisplayed();
 		Assert.assertTrue(isAlertBoxDisplayed);
 	}
@@ -49,8 +54,9 @@ public class Contact_Test extends Base{
 		loginpage.enterPassword(password_value);
 		loginpage.clickonSigninButton();
 		
-		Contact_Page contact = new Contact_Page(driver);
-		contact.ClickontheManageContact();
+//		Contact_Page contact = new Contact_Page(driver);
+//		contact.ClickontheManageContactMoreInfo();
+		contact = logoutpage.ClickontheManageContactMoreInfo();
 		contact.ClickonEditButton();
 		boolean isUpdateButtonEnabled = contact.isUpdateButtonDisplayed();
 		System.out.println("Update Button is Displayed successfully");

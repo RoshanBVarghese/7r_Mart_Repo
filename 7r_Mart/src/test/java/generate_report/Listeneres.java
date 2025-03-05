@@ -12,7 +12,7 @@ import com.aventstack.extentreports.Status;
 import test_scripts.Base;
 import utilities.ExtentReport_Utility;
 
-public class Listeneres extends Base implements ITestListener {
+public class Listeneres implements ITestListener {
 
 	ExtentTest test;
 	ExtentReports extent = ExtentReport_Utility.createExtentReports();

@@ -26,7 +26,7 @@ public class Footer_Test extends Base{
 		loginpage.clickonSigninButton();
 		
 		Footer_Page footer = new Footer_Page(driver);
-		footer.clickMoreinfo();
+//		footer.clickMoreinfoFooterPage();
 		footer.clickEditButton();
 		footer.EntertheDetails(address);
 		footer.clickUpdateButton();
@@ -49,7 +49,7 @@ public class Footer_Test extends Base{
 		loginpage.clickonSigninButton();
 		
 		Footer_Page footer = new Footer_Page(driver);
-		footer.clickMoreinfo();
+//		footer.clickMoreinfoFooterPage();
 		footer.clickEditButton();
 		boolean isUpdateButtonEnabled = footer.isUpdateButtondisplayed();
 		System.out.println("Update Button is Displayed successfully");

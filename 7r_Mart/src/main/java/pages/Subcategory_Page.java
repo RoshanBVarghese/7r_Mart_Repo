@@ -22,8 +22,8 @@ public class Subcategory_Page {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category']")
-	private WebElement moreinfo;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-sub-category']")
+//	private WebElement categorymoreinfo;
 	@FindBy(xpath = "//a[@onclick='click_button(1)']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//select[@class='form-control selectpicker']")
@@ -37,9 +37,9 @@ public class Subcategory_Page {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement green_alert;
 
-	public void clickOnMoreInfo() {
-		moreinfo.click();
-	}
+//	public void clickOnMoreInfoSubcategoryPage() {
+//		categorymoreinfo.click();
+//	}
 
 	public void clickonNewButton() {
 		newbutton.click();

@@ -7,12 +7,15 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import pages.Adminusers_Page;
+import pages.LogOut_Page;
 import pages.Login_Page;
 import utilities.Excel_Utility;
 import utilities.Faker_Utility;
 
 public class Adminusers_Test extends Base {
-
+	LogOut_Page logoutpage;
+	Adminusers_Page adminusers;
+	
 	@Test(description = "verify that the Admin is able to create new Users Succesfully")
 	public void verifywhethertheUserisableviewtheAdminUsersList() throws IOException {
 //		String username_value = "admin";
@@ -21,9 +24,9 @@ public class Adminusers_Test extends Base {
 		String password_value = Excel_Utility.getStringData(1, 1, "Login_Page");
 
 		Login_Page loginpage = new Login_Page(driver);
-		loginpage.enterUsername(username_value);
-		loginpage.enterPassword(password_value);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsername(username_value).enterPassword(password_value);
+		//loginpage.enterPassword(password_value);
+		logoutpage = loginpage.clickonSigninButton();
 
 		// String username = "Sony";
 		// String username = Excel_Utility.getStringData(1, 0, "Admin_User");
@@ -32,13 +35,14 @@ public class Adminusers_Test extends Base {
 		// String password = "Sony20";
 		String password = Excel_Utility.getStringData(1, 1, "Admin_User");
 
-		Adminusers_Page adminusers = new Adminusers_Page(driver);
-		adminusers.ClickonMoreinfoButton();
-		adminusers.ClickonNewButton();
-		adminusers.EnterUsername(username);
-		adminusers.EnterPassword(password);
-		adminusers.Dropdown();
-		adminusers.ClicktheSaveButton();
+//		Adminusers_Page adminusers = new Adminusers_Page(driver);
+//		adminusers.ClickonMoreinfoAdminPage();
+		adminusers = logoutpage.ClickonMoreinfoAdminPage();
+		adminusers.ClickonNewButton().EnterUsername(username).EnterPassword(password).Dropdown().ClicktheSaveButton();
+//		adminusers.EnterUsername(username);
+//		adminusers.EnterPassword(password);
+//		adminusers.Dropdown();
+//		adminusers.ClicktheSaveButton();
 		boolean isalertmessagedisplayed = adminusers.isAlertDisplayed();
 		Assert.assertTrue(isalertmessagedisplayed);
 	}
@@ -51,12 +55,13 @@ public class Adminusers_Test extends Base {
 		// String password_value = Excel_Utility.getStringData(1, 1, "Login_Page");
 
 		Login_Page loginpage = new Login_Page(driver);
-		loginpage.enterUsername(username_value);
-		loginpage.enterPassword(password_value);
-		loginpage.clickonSigninButton();
+		loginpage.enterUsername(username_value).enterPassword(password_value);
+		//loginpage.enterPassword(password_value);
+		logoutpage = loginpage.clickonSigninButton();
 
-		Adminusers_Page adminusers = new Adminusers_Page(driver);
-		adminusers.ClickonMoreinfoButton();
+//		Adminusers_Page adminusers = new Adminusers_Page(driver);
+//		adminusers.ClickonMoreinfoAdminPage();
+		adminusers = logoutpage.ClickonMoreinfoAdminPage();
 		adminusers.ClickonNewButton();
 		boolean isSaveButtonDisplayed = adminusers.isSavebuttonDisplayed();
 		System.out.println("Save Button is Displayed successfully");

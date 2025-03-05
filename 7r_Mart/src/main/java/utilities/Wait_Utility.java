@@ -22,4 +22,18 @@ public class Wait_Utility {
 		wait.until(ExpectedConditions.visibilityOf(target));
 	}
 	
+	public void waitForElementToGetSelected(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.elementSelectionStateToBe(element, true));
+	}
+	
+	public void waitReturnValue(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.jsReturnsValue(toString()));
+	}
+	
+	public void waitForFrameToBeAvailable(WebDriver driver, WebElement element) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(EXPLICIT_WAIT));
+		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(element));
+	}
 }

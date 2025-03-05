@@ -16,8 +16,8 @@ public class Adminusers_Page {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
-	private WebElement moreinfo;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-admin' and @class='small-box-footer']")
+//	private WebElement moreinfo;
 	@FindBy(xpath = "//a[@class='btn btn-rounded btn-danger']")
 	private WebElement newbutton;
 	@FindBy(xpath = "//input[@id='username']")
@@ -31,31 +31,37 @@ public class Adminusers_Page {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-	public void ClickonMoreinfoButton() {
-		moreinfo.click();
-	}
+//	public Adminusers_Page ClickonMoreinfoAdminPage() {
+//		moreinfo.click();
+//		return this;
+//	}
 
-	public void ClickonNewButton() {
+	public Adminusers_Page ClickonNewButton() {
 		newbutton.click();
+		return this;
 	}
 
-	public void EnterUsername(String username) {
+	public Adminusers_Page EnterUsername(String username) {
 		username_field.sendKeys(username);
+		return this;
 	}
 
-	public void EnterPassword(String password) {
+	public Adminusers_Page EnterPassword(String password) {
 		password_field.sendKeys(password);
+		return this;
 	}
 
-	public void Dropdown() {
+	public Adminusers_Page Dropdown() {
 //		Select select = new Select(dropdown);
 //		select.selectByIndex(3);
 		Page_Utility pageutility = new Page_Utility();
 		pageutility.selectByIndex(dropdown, 3);
+		return this;
 	}
 
-	public void ClicktheSaveButton() {
+	public Adminusers_Page ClicktheSaveButton() {
 		save.click();
+		return this;
 	}
 
 	public boolean isAlertDisplayed() {

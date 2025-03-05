@@ -24,7 +24,7 @@ public class Product_Test extends Base{
 		loginpage.clickonSigninButton();
 		
 		Product_Page product = new Product_Page(driver);
-		product.clickMoreinfo();
+//		product.clickMoreinfoProductPage();
 		product.clickDeletebutton();
 		boolean isalertboxdisplayed = product.isAlertboxDisplayed();
 		Assert.assertTrue(isalertboxdisplayed);

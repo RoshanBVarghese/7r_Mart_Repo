@@ -24,7 +24,7 @@ public class LogOut_Test extends Base{
 		loginpage.clickonSigninButton();
 		
 		LogOut_Page logout = new LogOut_Page(driver);
-		logout.clickonAdminButton();
+		logout.clickonAdminButtonLogoutPage();
 		logout.clickonLogoutButton();
 	}
 	

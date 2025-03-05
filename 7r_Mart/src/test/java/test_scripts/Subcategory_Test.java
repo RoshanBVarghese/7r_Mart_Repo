@@ -28,7 +28,7 @@ public class Subcategory_Test extends Base{
 		loginpage.clickonSigninButton();
 		
 		Subcategory_Page sub = new Subcategory_Page(driver);
-		sub.clickOnMoreInfo();
+//		sub.clickOnMoreInfoSubcategoryPage();
 		sub.clickonNewButton();
 		sub.selectanyCategory();
 		sub.enterTheCategoryText(sub_text);

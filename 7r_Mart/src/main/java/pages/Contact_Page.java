@@ -15,8 +15,8 @@ public class Contact_Page {
 		PageFactory.initElements(driver, this);
 	}
 
-	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']")
-	private WebElement contact;
+//	@FindBy(xpath = "//a[@href='https://groceryapp.uniqassosiates.com/admin/list-contact']")
+//	private WebElement contact;
 	@FindBy(xpath = "//a[@class='btn btn-sm btn btn-primary btncss']")
 	private WebElement editbutton;
 	@FindBy(xpath = "//input[@id='phone']")
@@ -28,27 +28,31 @@ public class Contact_Page {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-	public void ClickontheManageContact() {
-		contact.click();
-	}
+//	public void ClickontheManageContactMoreInfo() {
+//		contact.click();
+//	}
 
-	public void ClickonEditButton() {
+	public Contact_Page ClickonEditButton() {
 		editbutton.click();
+		return this;
 	}
 
-	public void Enterthevalues(String phn) {
+	public Contact_Page Enterthevalues(String phn) {
 		phonefield.clear();
 		phonefield.sendKeys(phn);
+		return this;
 	}
 
-	public void Enterthedeliverytime(String time) {
+	public Contact_Page Enterthedeliverytime(String time) {
 		deliverytimefield.clear();
 		deliverytimefield.sendKeys(time);
+		return this;
 	}
 
-	public void Clicktheupdatebutton() {
+	public Contact_Page Clicktheupdatebutton() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", updatebutton);
+		return this;
 
 	}
 

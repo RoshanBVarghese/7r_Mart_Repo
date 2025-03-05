@@ -35,15 +35,17 @@ public class Login_Page {
 	@FindBy(xpath = "//div[@class='alert alert-danger alert-dismissible']")
 	private WebElement alertbox;
 
-	public void enterUsername(String username_value) {
+	public Login_Page enterUsername(String username_value) {
 		usernameField.sendKeys(username_value);
+		return this;
 	}
 
-	public void enterPassword(String password_value) {
+	public Login_Page enterPassword(String password_value) {
 		password.sendKeys(password_value);
+		return this;
 	}
 
-	public void clickonSigninButton() {
+	public LogOut_Page clickonSigninButton() {
 //		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 //		wait.until(ExpectedConditions.elementToBeClickable(button));
 //		button.click();
@@ -57,6 +59,7 @@ public class Login_Page {
 		Wait_Utility waitutility = new Wait_Utility();
 		waitutility.waitForClick(driver, button);
 		button.click();
+		return new LogOut_Page(driver);
 	}
 	
 	public boolean isDashboardLoaded() {

@@ -25,9 +25,9 @@ public class Footer_Page {
 	@FindBy(xpath = "//div[@class='alert alert-success alert-dismissible']")
 	private WebElement alertbox;
 
-	public void clickMoreinfo() {
-		moreinfo.click();
-	}
+//	public void clickMoreinfoFooterPage() {
+//		moreinfo.click();
+//	}
 
 	public void clickEditButton() {
 		editbutton.click();
